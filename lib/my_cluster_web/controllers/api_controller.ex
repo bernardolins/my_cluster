@@ -7,8 +7,8 @@ defmodule MyClusterWeb.ApiController do
     json conn, %{
       name: "MyCluster",
       host: to_string(host),
-      node: Node.self()
-      node_list: Node.list,
+      node: Node.self(),
+      node_list: Node.list
     }
   end
 end
