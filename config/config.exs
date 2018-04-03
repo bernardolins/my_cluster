@@ -24,7 +24,7 @@ config :libcluster,
       strategy: Cluster.Strategy.Kubernetes,
       config: [
         kubernetes_selector: "app=mycluster",
-        kubernetes_node_basename: "mycluster"
+        kubernetes_node_basename: "my_cluster"
       ]
     ]
   ]

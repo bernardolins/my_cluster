@@ -1,0 +1,42 @@
+apiVersion: apps/v1beta2
+kind: Deployment
+metadata:
+  name: mycluster-deployment
+  labels:
+    app: mycluster
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mycluster
+  template:
+    metadata:
+      labels:
+        app: mycluster
+    spec:
+      containers:
+      - name: mycluster
+        image: bernardolins/mycluster:0.0.1
+        ports:
+        - containerPort: 4000
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mycluster-service
+  labels:
+    app: mycluster
+spec:
+  ports:
+    - protocol: TCP
+      name: mycluster
+      port: 4000
+      targetPort: 4000
+      nodePort: 30080
+  selector:
+    app: mycluster
+  type: NodePort
+  sessionAffinity: None
+  externalTrafficPolicy: Cluster
+status:
+  loadBalancer: {}
