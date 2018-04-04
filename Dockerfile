@@ -5,8 +5,8 @@ RUN mix local.rebar --force
 
 EXPOSE 8080
 
-COPY ./ /my_cluster
-WORKDIR /my_cluster
+RUN git clone https://github.com/bernardolins/my_cluster.git
+WORKDIR my_cluster
 
 RUN mix deps.get
 RUN mix compile
