@@ -43,10 +43,9 @@ spec:
       name: mycluster
       port: 4000
       targetPort: 4000
-      nodePort: 30080
   selector:
     app: mycluster
-  type: NodePort
+  type: LoadBalancer
   sessionAffinity: None
   externalTrafficPolicy: Cluster
 status:

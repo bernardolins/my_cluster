@@ -3,8 +3,6 @@ FROM elixir:1.6.4
 RUN mix local.hex --force
 RUN mix local.rebar --force
 
-EXPOSE 4000
-
 RUN git clone https://github.com/bernardolins/my_cluster.git
 WORKDIR my_cluster
 
