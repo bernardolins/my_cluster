@@ -4,7 +4,7 @@ defmodule MyCluster.Mixfile do
   def project do
     [
       app: :my_cluster,
-      version: "0.0.2",
+      version: "0.0.5",
       elixir: "~> 1.4",
       elixirc_paths: elixirc_paths(Mix.env),
       compilers: [:phoenix, :gettext] ++ Mix.compilers,
@@ -36,6 +36,7 @@ defmodule MyCluster.Mixfile do
       {:phoenix_pubsub, "~> 1.0"},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
+      {:distillery, "~> 1.5", runtime: false},
       {:libcluster, "~> 2.1"}
     ]
   end

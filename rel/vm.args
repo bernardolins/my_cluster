@@ -1,0 +1,3 @@
+-name my_cluster@${POD_IP}
+-setcookie :"w*OqKmuvBwxYBCwkYBS:)P*S(16Kuf`8@`Ms)D|Pxqw;Px]tEJ*OLt}[N2,2NFM3"
+-smp auto

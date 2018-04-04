@@ -16,7 +16,18 @@ spec:
     spec:
       containers:
       - name: mycluster
-        image: bernardolins/mycluster:0.0.1
+        image: bernardolins/mycluster:0.0.5
+        env:
+        - name: POD_IP
+          valueFrom:
+            fieldRef:
+              fieldPath: status.podIP
+        - name: POD_NAME
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: REPLACE_OS_VARS
+          value: "true"
         ports:
         - containerPort: 4000
 ---
