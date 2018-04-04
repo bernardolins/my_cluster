@@ -3,13 +3,16 @@ FROM elixir:1.6.4
 RUN mix local.hex --force
 RUN mix local.rebar --force
 
-EXPOSE 8080
+EXPOSE 4000
 
 RUN git clone https://github.com/bernardolins/my_cluster.git
 WORKDIR my_cluster
 
 RUN mix deps.get
 RUN mix compile
+
+ENV POD_IP 127.0.0.1
+ENV REPLACE_OS_VARS true
 
 ENV MIX_ENV prod
 RUN mix release --env=prod
