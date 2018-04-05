@@ -18,16 +18,6 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:user_id]
 
-config :libcluster,
-  topologies: [
-    k8s_example: [
-      strategy: Cluster.Strategy.Kubernetes,
-      config: [
-        kubernetes_selector: "app=mycluster",
-        kubernetes_node_basename: "my_cluster"
-      ]
-    ]
-  ]
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
