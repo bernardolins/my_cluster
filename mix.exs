@@ -37,7 +37,8 @@ defmodule MyCluster.Mixfile do
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.5", runtime: false},
-      {:libcluster, "~> 2.1"}
+      {:libcluster, "~> 2.1"},
+      {:swarm, "~> 3.0"}
     ]
   end
 end
