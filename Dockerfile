@@ -1,10 +1,14 @@
-FROM elixir:1.6.4
+ARG ELIXIR_VERSION=latest
+ARG APP_TAG=master
+
+FROM elixir:${ELIXIR_VERSION}
 
 RUN mix local.hex --force
 RUN mix local.rebar --force
 
 RUN git clone https://github.com/bernardolins/my_cluster.git
 WORKDIR my_cluster
+RUN git checkout ${APP_TAG}
 
 RUN mix deps.get
 RUN mix compile
