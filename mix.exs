@@ -38,7 +38,8 @@ defmodule MyCluster.Mixfile do
       {:cowboy, "~> 1.0"},
       {:distillery, "~> 1.5", runtime: false},
       {:libcluster, "~> 2.1"},
-      {:swarm, "~> 3.0"}
+      {:swarm, "~> 3.0"},
+      {:uuid, "~> 1.1"}
     ]
   end
 end
