@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: mycluster
-        image: bernardolins/mycluster:0.0.5
+        image: bernardolins/mycluster:0.0.8-elixir_1.6.4
         env:
         - name: POD_IP
           valueFrom:
