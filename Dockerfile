@@ -11,7 +11,6 @@ WORKDIR my_cluster
 RUN git checkout ${APP_TAG}
 
 RUN mix deps.get
-RUN mix compile
 
 ENV POD_IP 127.0.0.1
 ENV REPLACE_OS_VARS true
