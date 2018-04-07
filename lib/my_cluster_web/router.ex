@@ -8,7 +8,7 @@ defmodule MyClusterWeb.Router do
   scope "/api", MyClusterWeb do
     pipe_through :api
     get "/", ApiController, :info
-    get "/join", ApiController, :join_room
+    post "/:room/join/:nickname", ApiController, :join_room
+    get "/:room/list_members", ApiController, :list_members
   end
-
 end
